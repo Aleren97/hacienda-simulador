@@ -12,15 +12,20 @@ btnCalcular.addEventListener('click', function() {
 
         neto = salario - ((salario * 20) / 100);
         
-        montoNeto.innerText = neto;
+        montoNeto.innerText = neto.toFixed(2);
         porcentaje.innerText = '20';
     
-    } else if (salario < 30000) {
+    } else if (salario < 30000 && salario > 0) {
 
         neto = salario - ((salario * 15) / 100);
         
-        montoNeto.innerText = neto;
+        montoNeto.innerText = neto.toFixed(2);
         porcentaje.innerText = '15';
+    } else {
+
+        montoNeto.innerText = 'ERROR';
+        porcentaje.innerText = 'Ø';
+        alert('Ese monto no se puede calcular.');
     }
 
     salarioBruto.value = '';
